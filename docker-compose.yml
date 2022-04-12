@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+    debian-backgroundremover:
+        restart: unless-stopped
+        volumes:
+            - './docker/my_media:/my_media:rw'
+        image: 'gtntdev/debian-backgroundremover'
