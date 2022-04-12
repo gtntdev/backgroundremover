@@ -4,4 +4,4 @@ services:
         restart: unless-stopped
         volumes:
             - './docker/my_media:/my_media:rw'
-        image: 'gtntdev/debian-backgroundremover'
+        image: 'strikeback93/backgroundremover:latest'
