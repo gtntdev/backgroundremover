@@ -120,6 +120,24 @@ change the model for diferent background removal methods between `u2netp`, `u2ne
 backgroundremover -i "/path/to/video.mp4" -m "u2net_human_seg" -fl 150 -tv -o "output.mov"
 ```
 
+# Docker: Usage as a cli
+## Prerequirements
+
+- at the moment only a linux 64 Bit docker image is available
+- install [Docker](https://docs.docker.com/engine/install/) and [Docker-Compose](https://docs.docker.com/compose/install/) following the official guides
+- clone the repo `git clone https://github.com/gtntdev/backgroundremover.git`
+- cd into the directory `cd backgroundremover`
+- pull the image `docker-compose pull` (this can take a while)
+- start the container `docker-compose up -d`
+- cd into the main media subfolder `cd docker/my_media`
+- move the file which you wish to edit in this directory, eg `mv ~/test.jpg .`
+- find out the `name` of your docker container `docker ps | grep backgroundremover`
+- convert the file with 
+```
+docker exec backgroundremover_debian-backgroundremover_1 backgroundremover -i "/my_media/test.jpg" -o "/my_media/test.png"
+``` 
+(where `backgroundremover_debian-backgroundremover_1 backgroundremover` is the `name` we got from the output above)
+
 ## Todo
 
 - convert logic from video to image to utilize more GPU on image removal
