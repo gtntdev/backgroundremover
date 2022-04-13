@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-    debian-backgroundremover:
+    backgroundremover:
         restart: unless-stopped
         volumes:
             - './docker/my_media:/my_media:rw'
