@@ -16,3 +16,4 @@ COPY ./docker/start.sh /start.sh
 
 #main script PID 1
 CMD /bin/bash /start.sh
+#test citagged
